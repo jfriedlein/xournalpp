@@ -137,6 +137,14 @@ void ToolHandler::initTools() {
     tools[TOOL_SELECT_PDF_TEXT_RECT - TOOL_PEN] =
             std::make_unique<ToolSelectPDFText>("selectPdfTextRect", TOOL_SELECT_PDF_TEXT_RECT, Colors::black);
 
+    thickness[TOOL_SIZE_VERY_FINE] = 1;
+    thickness[TOOL_SIZE_FINE] = 2.83;
+    thickness[TOOL_SIZE_MEDIUM] = 8.50;
+    thickness[TOOL_SIZE_THICK] = 12;
+    thickness[TOOL_SIZE_VERY_THICK] = 18;
+    tools[TOOL_LASER_POINTER - TOOL_PEN] = std::make_unique<Tool>("laserPointer", TOOL_LASER_POINTER, Colors::red,
+                                                                  TOOL_CAP_COLOR | TOOL_CAP_SIZE, thickness);
+
     this->eraserButtonTool = std::make_unique<Tool>(*tools[TOOL_HIGHLIGHTER - TOOL_PEN]);
     this->stylusButton1Tool = std::make_unique<Tool>(*tools[TOOL_HIGHLIGHTER - TOOL_PEN]);
     this->stylusButton2Tool = std::make_unique<Tool>(*tools[TOOL_HIGHLIGHTER - TOOL_PEN]);
