@@ -285,6 +285,28 @@ void XournalppCursor::updateCursor() {
                     cursor = getHighlighterCursor();
                 }
             }
+        } else if ( type == TOOL_LASER_POINTER ) {
+            // Code based on eraser (XournalppCursor::getEraserCursor()), which shows white square icon
+             // Determine the cursorSize, which sets the size of the laser point
+		      double cursorSize = control->getToolHandler()->getThickness() * 2.0 * control->getZoomControl()->getZoom();
+             // @todo What is the following doing? Is this needed here?
+		      gulong flavour = static_cast<gulong>(64 * cursorSize);
+		      this->currentCursorFlavour = flavour;
+             // Create surface that represents the icon shown as the cursor
+		      cairo_surface_t* surface = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, ceil_cast<int>(cursorSize), ceil_cast<int>(cursorSize));
+		      cairo_t* cr = cairo_create(surface);
+             // Set color of laser point
+             // @todo We could use the selected colour, so the laser pointer can be set as green/blue/etc.. How to do this?
+	          cairo_set_source_rgba(cr, 1, 0, 0, 0.7);
+             // Draw the laser point as circle, the circles center is in the middle of the box (at half the cursorSize)
+             // The radius "0.45*cursorSize" is chosen a bit smaller than the cursorSize*cursorSize box
+             // A full circle is drawn from starting angle 0 rad to 2*pi rad
+	          cairo_arc(cr, cursorSize/2., cursorSize/2., 0.45*cursorSize, 0, 2 * M_PI);
+	          cairo_fill(cr);
+             // Standard code from eraser (XournalppCursor::getEraserCursor())
+		      cairo_destroy(cr);
+		      cursor = gdk_cursor_new_from_surface(gdk_display_get_default(), surface, cursorSize / 2.0, cursorSize / 2.0);
+		      cairo_surface_destroy(surface);
         } else if (type == TOOL_ERASER) {
             EraserVisibility visibility = control->getSettings()->getEraserVisibility();
             if ((this->inputDevice == INPUT_DEVICE_PEN || this->inputDevice == INPUT_DEVICE_ERASER) &&
