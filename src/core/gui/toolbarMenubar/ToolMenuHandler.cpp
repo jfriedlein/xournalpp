@@ -395,6 +395,9 @@ void ToolMenuHandler::initToolItems() {
     emplaceCustomItemWithTarget("HIGHLIGHTER", Cat::TOOLS, Action::SELECT_TOOL, TOOL_HIGHLIGHTER, "tool-highlighter",
                                 _("Highlighter"));
 
+    emplaceCustomItemWithTarget("LASER_POINTER", Cat::TOOLS, Action::SELECT_TOOL, TOOL_LASER_POINTER, "laser-pointer",
+                                _("Laser pointer"));
+
     emplaceCustomItemWithTarget("TEXT", Cat::TOOLS, Action::SELECT_TOOL, TOOL_TEXT, "tool-text", _("Text"));
     emplaceCustomItem("MATH_TEX", Cat::TOOLS, Action::TEX, "tool-math-tex", _("Add/Edit TeX"));
     emplaceCustomItemWithTarget("IMAGE", Cat::TOOLS, Action::SELECT_TOOL, TOOL_IMAGE, "tool-image", _("Image"));
