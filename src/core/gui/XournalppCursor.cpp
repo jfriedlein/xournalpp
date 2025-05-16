@@ -297,13 +297,19 @@ void XournalppCursor::updateCursor() {
 		      cairo_t* cr = cairo_create(surface);
              // Set color of laser point
              // @todo We could use the selected colour, so the laser pointer can be set as green/blue/etc.. How to do this?
-	          cairo_set_source_rgba(cr, 1, 0, 0, 0.7);
+              cairo_pattern_t *radial = cairo_pattern_create_radial(cursorSize/2., cursorSize/2., 0, cursorSize/2., cursorSize/2., 0.45*cursorSize);
+             // Add color stops: fully opaque red at center, fully transparent at edge
+              cairo_pattern_add_color_stop_rgba(radial, 0.0, 1.0, 0.0, 0.0, 1.0); // Red, fully opaque
+              cairo_pattern_add_color_stop_rgba(radial, 1.0, 1.0, 0.0, 0.0, 0.0); // Red, fully transparent
              // Draw the laser point as circle, the circles center is in the middle of the box (at half the cursorSize)
              // The radius "0.45*cursorSize" is chosen a bit smaller than the cursorSize*cursorSize box
              // A full circle is drawn from starting angle 0 rad to 2*pi rad
 	          cairo_arc(cr, cursorSize/2., cursorSize/2., 0.45*cursorSize, 0, 2 * M_PI);
+             // Add the radial pattern with low opacity outside and high transparency inside
+              cairo_set_source(cr, radial);
 	          cairo_fill(cr);
              // Standard code from eraser (XournalppCursor::getEraserCursor())
+              cairo_pattern_destroy(radial);
 		      cairo_destroy(cr);
 		      cursor = gdk_cursor_new_from_surface(gdk_display_get_default(), surface, cursorSize / 2.0, cursorSize / 2.0);
 		      cairo_surface_destroy(surface);
