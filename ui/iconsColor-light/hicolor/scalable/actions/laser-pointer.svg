@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="24"
+   height="24"
+   fill="none"
+   stroke="currentColor"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   stroke-width="2"
+   version="1.1"
+   id="svg16"
+   sodipodi:docname="laser-pointer.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)">
+  <metadata
+     id="metadata20">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1145"
+     id="namedview18"
+     showgrid="false"
+     inkscape:zoom="27.812867"
+     inkscape:cx="6.8450675"
+     inkscape:cy="10.631684"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg16" />
+  <defs
+     id="defs8">
+    <linearGradient
+       id="a">
+      <stop
+         offset=".424"
+         style="stop-color:#ee2626;stop-opacity:1"
+         id="stop2" />
+      <stop
+         offset=".926"
+         style="stop-color:#ee2727;stop-opacity:0"
+         id="stop4" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#a"
+       id="b"
+       x1="20.153"
+       x2="2.547"
+       y1="16.855"
+       y2="2.855"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-19.235701,1.8336837)" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#a"
+       id="radialGradient864"
+       cx="12.030276"
+       cy="11.969722"
+       fx="12.030276"
+       fy="11.969722"
+       r="7.5"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1.1333334,0,0,1.1333333,-1.6343119,-1.5656847)" />
+  </defs>
+  <circle
+     style="opacity:1;fill:url(#radialGradient864);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2.59986663;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     id="path827"
+     cx="12"
+     cy="12"
+     r="8.5" />
+</svg>
